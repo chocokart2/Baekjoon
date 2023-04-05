@@ -14,8 +14,6 @@ internal class Program
 
         StringBuilder builder = new StringBuilder();
 
-        if (count == 10000) throw new OverflowException("wow so big");
-
         for (int i = 0; i < count; ++i)
         {
             string[] command = Console.ReadLine().Split(' ');
@@ -32,43 +30,33 @@ internal class Program
                     if (length.Equals(0))
                     {
                         builder.AppendLine("-1");
-                        //Console.WriteLine(-1);
                     }
                     else
                     {
-                        //Console.WriteLine(queue[headIndex++]); // 하나 출력하고 헤드를 뒷칸으로 이동
-                        builder.AppendLine(Convert.ToString(queue[headIndex]));
+                        builder.AppendLine(Convert.ToString(queue[headIndex]));// 하나 출력하고 헤드를 뒷칸으로 이동
                         ++headIndex;
                         --length;
                     }
                     break;
                 case "size":
-                    //Console.WriteLine(length);
                     builder.AppendLine(Convert.ToString(length));
                     break;
                 case "empty":
-                    if (length.Equals(0)) builder.AppendLine("1"); //Console.WriteLine(1);
-                    else builder.AppendLine("0"); //Console.WriteLine(0);
+                    if (length.Equals(0)) builder.AppendLine("1");
+                    else builder.AppendLine("0");
                     break;
                 case "front":
-                    if (length.Equals(0)) builder.AppendLine("-1"); //Console.WriteLine(-1);
-                    else builder.AppendLine(Convert.ToString(queue[headIndex])); //Console.WriteLine(queue[headIndex]);
+                    if (length.Equals(0)) builder.AppendLine("-1");
+                    else builder.AppendLine(Convert.ToString(queue[headIndex]));
                     break;
                 case "back":
-                    if (length.Equals(0)) builder.AppendLine("-1"); //Console.WriteLine(-1);
-                    else builder.AppendLine(Convert.ToString(queue[tailIndex])); //Console.WriteLine(queue[tailIndex]);
+                    if (length.Equals(0)) builder.AppendLine("-1");
+                    else builder.AppendLine(Convert.ToString(queue[tailIndex]));
                     break;
                 default:
-                    throw new InvalidOperationException("pew!");
                     break;
             }
-
-            
-
-            if (command.Length > 2) throw new PlatformNotSupportedException("AAAAA");
         }
         Console.Write(builder);
-        Console.ReadLine();
-        //throw new ArgumentException("hamgest");
     }
 }
