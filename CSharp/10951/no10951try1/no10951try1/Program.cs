@@ -10,6 +10,9 @@ namespace no10951try1
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ReadLine();
         }
     }
 }
