@@ -10,9 +10,12 @@ namespace no10951try1
     {
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ReadLine();
+            while (true)
+            {
+                string receiveLine = Console.ReadLine();
+                if (receiveLine == null) break; // EOF
+                Console.WriteLine(int.Parse(receiveLine[0].ToString()) + int.Parse(receiveLine[2].ToString()));
+            }
         }
     }
 }
