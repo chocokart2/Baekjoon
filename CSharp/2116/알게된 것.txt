@@ -1,0 +1,8 @@
+걍 자료형이 클래스면 생성자에 DeepCopy를 지원하라.
+
+DicePillar는 구조체가 아니라 클래스이다.
+이때, 아래의 코드를 실행했을 때,
+DicePillar[] result = Enumerable.Repeat(new DicePillar() { dices = target }, 6).ToArray();
+
+클래스를 자료형으로 하는 배열 result는 [배열 result의 각 원소마다 repeat 매개변수 속의 객체를 주소값을 가지는] 얕은 복사를 한다.
+따라서 for문을 돌려서 매번 객체를 할당하거나 이 자료형을 클래스가 아닌 구조체로 선언했으면 결과는 달랐을 것
