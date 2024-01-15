@@ -1,0 +1,8 @@
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\16931\no16931try1\no16931try1\bin\Debug\no16931try1.exe.config
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\16931\no16931try1\no16931try1\bin\Debug\no16931try1.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\16931\no16931try1\no16931try1\bin\Debug\no16931try1.pdb
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\16931\no16931try1\no16931try1\obj\Debug\no16931try1.csproj.AssemblyReference.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\16931\no16931try1\no16931try1\obj\Debug\no16931try1.csproj.SuggestedBindingRedirects.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\16931\no16931try1\no16931try1\obj\Debug\no16931try1.csproj.CoreCompileInputs.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\16931\no16931try1\no16931try1\obj\Debug\no16931try1.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\16931\no16931try1\no16931try1\obj\Debug\no16931try1.pdb

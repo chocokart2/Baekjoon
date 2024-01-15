@@ -1,0 +1,14 @@
+﻿  ConsoleApplication1.cpp
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230902Sinchon\G\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(12,10): error C2039: 'function': 'std'의 멤버가 아닙니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\algorithm(40): message : 'std' 선언을 참조하십시오.
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230902Sinchon\G\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(87): message : 컴파일되는 클래스 템플릿 인스턴스화 'Heap<T>'에 대한 참조를 확인하세요.
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230902Sinchon\G\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(12,18): error C2143: 구문 오류: ';'이(가) '<' 앞에 없습니다.
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230902Sinchon\G\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(12,1): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230902Sinchon\G\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(12,1): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230902Sinchon\G\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(19,25): error C2039: 'function': 'std'의 멤버가 아닙니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\algorithm(40): message : 'std' 선언을 참조하십시오.
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230902Sinchon\G\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(19,1): error C2061: 구문 오류: 식별자 'function'
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230902Sinchon\G\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(20,37): error C3861: 'IsLeftGreaterThanOrEqualToRight': 식별자를 찾을 수 없습니다.
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230902Sinchon\G\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(20,69): error C3861: 'function': 식별자를 찾을 수 없습니다.
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230902Sinchon\G\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(98,67): error C2440: '<function-style-cast>': 'initializer list'에서 'Heap<int>'(으)로 변환할 수 없습니다.
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230902Sinchon\G\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.cpp(98,67): message : 소스 형식을 가져올 수 있는 생성자가 없거나 생성자 오버로드 확인이 모호합니다.

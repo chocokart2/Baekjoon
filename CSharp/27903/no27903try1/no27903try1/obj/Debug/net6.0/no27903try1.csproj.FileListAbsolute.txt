@@ -1,0 +1,15 @@
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\bin\Debug\net6.0\no27903try1.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\bin\Debug\net6.0\no27903try1.deps.json
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\bin\Debug\net6.0\no27903try1.runtimeconfig.json
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\bin\Debug\net6.0\no27903try1.dll
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\bin\Debug\net6.0\no27903try1.pdb
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\obj\Debug\net6.0\no27903try1.csproj.AssemblyReference.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\obj\Debug\net6.0\no27903try1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\obj\Debug\net6.0\no27903try1.AssemblyInfoInputs.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\obj\Debug\net6.0\no27903try1.AssemblyInfo.cs
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\obj\Debug\net6.0\no27903try1.csproj.CoreCompileInputs.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\obj\Debug\net6.0\no27903try1.dll
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\obj\Debug\net6.0\refint\no27903try1.dll
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\obj\Debug\net6.0\no27903try1.pdb
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\obj\Debug\net6.0\no27903try1.genruntimeconfig.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\27903\no27903try1\no27903try1\obj\Debug\net6.0\ref\no27903try1.dll

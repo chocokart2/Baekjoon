@@ -13,8 +13,11 @@ namespace no7662try1
 
             const int EMPTY_QUEUE_LENGTH = 1;
             int[] data; // 가장 작은 값부터 가장 큰 값 순으로 정렬합니다. 인덱스가 낮을수록 낮은 값이 들어갑니다.
+
             int length;
 
+            int rear; // int.MinValue가 있는 인덱스의 번호입니다.
+            int lastElementIndex;
             public DualPriorityQueue()
             {
                 data = new int[1_000_001];

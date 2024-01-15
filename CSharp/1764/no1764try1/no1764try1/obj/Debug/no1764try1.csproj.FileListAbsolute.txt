@@ -1,0 +1,3 @@
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\1764\no1764try1\no1764try1\obj\Debug\no1764try1.csproj.AssemblyReference.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\1764\no1764try1\no1764try1\obj\Debug\no1764try1.csproj.SuggestedBindingRedirects.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\1764\no1764try1\no1764try1\obj\Debug\no1764try1.csproj.CoreCompileInputs.cache

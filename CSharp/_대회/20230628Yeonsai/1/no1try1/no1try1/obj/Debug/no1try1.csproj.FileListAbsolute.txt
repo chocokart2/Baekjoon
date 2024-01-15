@@ -1,0 +1,8 @@
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230628Yeonsai\1\no1try1\no1try1\bin\Debug\no1try1.exe.config
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230628Yeonsai\1\no1try1\no1try1\bin\Debug\no1try1.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230628Yeonsai\1\no1try1\no1try1\bin\Debug\no1try1.pdb
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230628Yeonsai\1\no1try1\no1try1\obj\Debug\no1try1.csproj.AssemblyReference.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230628Yeonsai\1\no1try1\no1try1\obj\Debug\no1try1.csproj.SuggestedBindingRedirects.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230628Yeonsai\1\no1try1\no1try1\obj\Debug\no1try1.csproj.CoreCompileInputs.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230628Yeonsai\1\no1try1\no1try1\obj\Debug\no1try1.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20230628Yeonsai\1\no1try1\no1try1\obj\Debug\no1try1.pdb

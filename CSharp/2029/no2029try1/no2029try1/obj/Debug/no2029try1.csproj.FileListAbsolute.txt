@@ -1,0 +1,7 @@
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2029\no2029try1\no2029try1\bin\Debug\no2029try1.exe.config
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2029\no2029try1\no2029try1\bin\Debug\no2029try1.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2029\no2029try1\no2029try1\bin\Debug\no2029try1.pdb
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2029\no2029try1\no2029try1\obj\Debug\no2029try1.csproj.AssemblyReference.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2029\no2029try1\no2029try1\obj\Debug\no2029try1.csproj.CoreCompileInputs.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2029\no2029try1\no2029try1\obj\Debug\no2029try1.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2029\no2029try1\no2029try1\obj\Debug\no2029try1.pdb

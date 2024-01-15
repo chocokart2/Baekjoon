@@ -1,0 +1,7 @@
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2750\no2750try2\no2750try2\bin\Debug\no2750try2.exe.config
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2750\no2750try2\no2750try2\bin\Debug\no2750try2.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2750\no2750try2\no2750try2\bin\Debug\no2750try2.pdb
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2750\no2750try2\no2750try2\obj\Debug\no2750try2.csproj.AssemblyReference.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2750\no2750try2\no2750try2\obj\Debug\no2750try2.csproj.CoreCompileInputs.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2750\no2750try2\no2750try2\obj\Debug\no2750try2.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2750\no2750try2\no2750try2\obj\Debug\no2750try2.pdb

@@ -1,0 +1,7 @@
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2010\no2010\no2010\bin\Debug\no2010.exe.config
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2010\no2010\no2010\bin\Debug\no2010.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2010\no2010\no2010\bin\Debug\no2010.pdb
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2010\no2010\no2010\obj\Debug\no2010.csproj.AssemblyReference.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2010\no2010\no2010\obj\Debug\no2010.csproj.CoreCompileInputs.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2010\no2010\no2010\obj\Debug\no2010.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\2010\no2010\no2010\obj\Debug\no2010.pdb

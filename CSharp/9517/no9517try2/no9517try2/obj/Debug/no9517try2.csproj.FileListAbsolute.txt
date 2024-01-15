@@ -1,0 +1,7 @@
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\9517\no9517try2\no9517try2\bin\Debug\no9517try2.exe.config
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\9517\no9517try2\no9517try2\bin\Debug\no9517try2.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\9517\no9517try2\no9517try2\bin\Debug\no9517try2.pdb
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\9517\no9517try2\no9517try2\obj\Debug\no9517try2.csproj.AssemblyReference.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\9517\no9517try2\no9517try2\obj\Debug\no9517try2.csproj.CoreCompileInputs.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\9517\no9517try2\no9517try2\obj\Debug\no9517try2.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\9517\no9517try2\no9517try2\obj\Debug\no9517try2.pdb

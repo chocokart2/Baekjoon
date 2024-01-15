@@ -1,0 +1,7 @@
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20231007\B\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20231007\B\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20231007\B\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20231007\B\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20231007\B\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20231007\B\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\_대회\20231007\B\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

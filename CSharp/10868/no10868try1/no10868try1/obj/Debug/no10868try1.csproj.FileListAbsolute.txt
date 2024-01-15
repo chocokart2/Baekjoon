@@ -1,0 +1,7 @@
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\10868\no10868try1\no10868try1\bin\Debug\no10868try1.exe.config
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\10868\no10868try1\no10868try1\bin\Debug\no10868try1.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\10868\no10868try1\no10868try1\bin\Debug\no10868try1.pdb
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\10868\no10868try1\no10868try1\obj\Debug\no10868try1.csproj.AssemblyReference.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\10868\no10868try1\no10868try1\obj\Debug\no10868try1.csproj.CoreCompileInputs.cache
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\10868\no10868try1\no10868try1\obj\Debug\no10868try1.exe
+C:\Users\PTY\Documents\GitHub\test\Baekjoon\CSharp\10868\no10868try1\no10868try1\obj\Debug\no10868try1.pdb
