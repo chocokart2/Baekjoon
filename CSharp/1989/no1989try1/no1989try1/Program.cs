@@ -11,16 +11,13 @@ namespace no1989try1
     {
         public class SegmentTree<T>
         {
-            //장충동 왕족발 보쌈
-            //이거보세요오
-            //이르케 이러케 이렇게
+            private const bool M_IS_DEBUGGING = false;
 
             public T[] originalData;
             public T[] tree;
             public delegate T Function(T left, T right); // example int Add(int left, int right) => left + right;
             Function treeFunction;
 
-            private const bool M_IS_DEBUGGING = true;
             private int functionCalledCount = 0;
 
             public SegmentTree(T[] data, Function function)
@@ -91,13 +88,13 @@ namespace no1989try1
                 // 찾는 범위 < 데이터 범위 or 데이터 범위 < 찾는 범위인 경우
                 if (originalStartIndex > targetEndIndex || originalEndIndex < targetStartIndex)
                 {
-                    if (M_IS_DEBUGGING) //Console.WriteLine(">> out of range");
+                    if (M_IS_DEBUGGING) Console.WriteLine(">> out of range");
                     return (false, default);
                 }
                 // 찾는 범위 시작 <
                 if (targetStartIndex <= originalStartIndex && originalEndIndex <= targetEndIndex)
                 {
-                    if (M_IS_DEBUGGING) //Console.WriteLine($">> Range is inside Target : find = [{targetStartIndex} ~ {targetEndIndex}], dataRange = [{originalStartIndex} ~ {originalEndIndex}]");
+                    if (M_IS_DEBUGGING) Console.WriteLine($">> Range is inside Target : find = [{targetStartIndex} ~ {targetEndIndex}], dataRange = [{originalStartIndex} ~ {originalEndIndex}]");
                     return (true, tree[currentTreeIndex]);
                 }
                 // 일부분만 걸쳐져 있는 상황
@@ -109,33 +106,52 @@ namespace no1989try1
 
                 if (M_IS_DEBUGGING)
                 {
-                    //Console.WriteLine($"left(index = {currentTreeIndex * 2}, range = [{originalStartIndex} ~ {originalMiddleIndex}]) = {left.isFound}, {left.returnValue}");
-                    //Console.WriteLine($"left(index = {currentTreeIndex * 2 + 1}, range = [{originalMiddleIndex + 1} ~ {originalEndIndex}]) = {right.isFound}, {right.returnValue}");
+                    Console.WriteLine($"left(index = {currentTreeIndex * 2}, range = [{originalStartIndex} ~ {originalMiddleIndex}]) = {left.isFound}, {left.returnValue}");
+                    Console.WriteLine($"left(index = {currentTreeIndex * 2 + 1}, range = [{originalMiddleIndex + 1} ~ {originalEndIndex}]) = {right.isFound}, {right.returnValue}");
                 }
 
                 if (left.isFound && right.isFound) return (true, treeFunction(left.returnValue, right.returnValue));
                 if (left.isFound) return left;
                 else return right;
-
-                // 둘다 찾은 경우 treeFunction 함수 호출하고, 연산 후 리턴
-                // 둘중 하나만 찾은경우 존재하는 값만 리턴
-                // 둘다 못찾은 경우 false 리턴
             }
         }
-        static long[] arr;
-        static SegmentTree<long> maxSegTree;
-        static long GetSegMax(int start, int end)
+        static long[] numberArr;
+        static SegmentTree<long> segTree;
+
+        static int GetFarthestIndexRecursive(int segmentLeftIndex, int segmentRightIndex, int outLoopIndex)
         {
-            if (start == end) return arr[start] * arr[start];
-            int mid = (start + end) / 2;
-            long leftSide = GetSegMax(start, mid);
-            long rightSide = GetSegMax(mid + 1, end);
-            long result = Math.Max(leftSide, rightSide);
+            if (segmentLeftIndex < 0 || segmentLeftIndex >= numberArr.Length) return -1;
+            if (segmentRightIndex < 0 || segmentRightIndex >= numberArr.Length) return -1;
+            if (segmentLeftIndex > segmentRightIndex) return -1;
 
-
+            int result = -1;
+            int middleIndex = segmentLeftIndex + segmentRightIndex >> 1;
+            bool isSegmentLeftSide = outLoopIndex > segmentLeftIndex;
             
-        }
+            // 최솟값을 찾기 위해 사용하는 범위입니다.
+            int newSegmentLeft = isSegmentLeftSide ? middleIndex : segmentLeftIndex;
+            int newSegmentRight = isSegmentLeftSide ? segmentRightIndex : middleIndex;
 
+            if (numberArr[outLoopIndex] > segTree.Get(newSegmentLeft, newSegmentRight))
+            {
+                // 해당 범위는 버려져야 할 범위입니다. ==> 더 안쪽으로
+                result = GetFarthestIndexRecursive(
+                    isSegmentLeftSide ? middleIndex + 1 : segmentLeftIndex,
+                    isSegmentLeftSide ? segmentRightIndex : middleIndex - 1,
+                    outLoopIndex);
+            }
+            else
+            {
+                // 해당 범위는 사용 가능한 범위입니다 ==> 쫌 더 늘려도 되겠는걸? 한번 욕심 부려 봐?
+                int recursiveResult = GetFarthestIndexRecursive(
+                    isSegmentLeftSide ? segmentLeftIndex : middleIndex + 1,
+                    isSegmentLeftSide ? middleIndex - 1 : segmentRightIndex,
+                    outLoopIndex);
+
+                result = (recursiveResult == -1) ? middleIndex : recursiveResult;
+            }
+            return result;
+        }
 
         static void Main(string[] args)
         {
@@ -145,7 +161,7 @@ namespace no1989try1
 
             readStream.ReadLine();
             string[] nums = readStream.ReadLine().Split(' ');
-            long[] numberArr = new long[nums.Length];
+            numberArr = new long[nums.Length];
             long[] sum = new long[nums.Length + 1];
             for (int index = 0; index < nums.Length; index++)
             {
@@ -153,23 +169,25 @@ namespace no1989try1
                 sum[index + 1] = numberArr[index] + sum[index];
             }
 
-            SegmentTree<long> segTree = new SegmentTree<long>(numberArr, Math.Min);
+            segTree = new SegmentTree<long>(numberArr, Math.Min);
 
             long maxVal = long.MinValue;
             long start = -1;
             long end = -1;
-            for (int startIndex = 0; startIndex < nums.Length; ++startIndex)
+            for (int index = 0; index < nums.Length; ++index)
             {
-                for (int endIndex = startIndex; endIndex < nums.Length; ++endIndex)
+                int startIndex = GetFarthestIndexRecursive(0, index - 1, index);
+                startIndex = (startIndex == -1) ? index : startIndex;
+                int endIndex = GetFarthestIndexRecursive(index + 1, numberArr.Length - 1, index);
+                endIndex = (endIndex == -1) ? index : endIndex;
+
+                long one = (sum[endIndex + 1] - sum[startIndex]) * segTree.Get(startIndex, endIndex);
+                
+                if (maxVal < one)
                 {
-                    long one = (sum[endIndex + 1] - sum[startIndex]) * segTree.Get(startIndex, endIndex);
-                    //Console.WriteLine($"{startIndex} ~ {endIndex} => sum = {(sum[endIndex + 1] - sum[startIndex])}, val = {one}");
-                    if (maxVal < one)
-                    {
-                        maxVal = one;
-                        start = startIndex;
-                        end = endIndex;
-                    }
+                    maxVal = one;
+                    start = startIndex;
+                    end = endIndex;
                 }
             }
             Console.WriteLine($"{maxVal}\n{start + 1} {end + 1}");

@@ -8,11 +8,11 @@ namespace no20301try1
 {
     internal class Program
     {
-        class ValuePtr
+        class Seat
         {
             public int value;
-            public ValuePtr next;
-            public ValuePtr prev;
+            public Seat next;
+            public Seat prev;
         }
 
         static void Main(string[] args)
@@ -23,16 +23,15 @@ namespace no20301try1
             int size = int.Parse(recvLine[0]);
             int step = int.Parse(recvLine[1]);
             int reverseLimit = int.Parse(recvLine[2]);
-                        ValuePtr[] circle = new ValuePtr[size];
-            ValuePtr current;
+            
+            Seat[] circle = new Seat[size];
+            Seat current;
 
             for (int index = 0; index < size; index++)
             {
-                circle[index] = new ValuePtr();
+                circle[index] = new Seat();
                 circle[index].value = index + 1;
-            }
-            for (int index = 0; index < size; index++)
-            {
+
                 if (index > 0)
                 {
                     circle[index].prev = circle[index - 1];
@@ -50,6 +49,10 @@ namespace no20301try1
                 {
                     circle[index].next = circle[0];
                 }
+            }
+            for (int index = 0; index < size; index++)
+            {
+
             }
             current = circle[step - 1];
             
@@ -81,7 +84,6 @@ namespace no20301try1
             }
 
             Console.WriteLine(result);
-
         }
     }
 }

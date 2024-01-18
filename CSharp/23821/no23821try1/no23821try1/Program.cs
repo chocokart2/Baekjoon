@@ -118,6 +118,18 @@ namespace no23821try1
                 if (rect.leftUpPosition.x + rect.size.x > sizeX || rect.leftUpPosition.y + rect.size.y > sizeY) return true;
                 return false;
             }
+            bool M_IsNotNew(Rectangle rect)
+            {
+                bool m_result = true;
+                for (int m_x = 0; m_x < rect.size.x; m_x++)
+                {
+                    for (int m_y = 0; m_y < rect.size.y; m_y++)
+                    {
+                        m_result &= result[m_x + rect.leftUpPosition.x, m_y + rect.leftUpPosition.y];
+                    }
+                }
+                return m_result;
+            }
 
             // 각 A 지점에서 시작하여, 너비 우선 탐색을 진행합니다. 1번 -> X체크 -> 2번 -> X체크 -> result 수정 및 다음 스텝 등록을 반복합니다.
             for (int index = 0; index < startArrayRear; index++) // O(n)
@@ -131,6 +143,7 @@ namespace no23821try1
                         leftUpPosition = startArray[index],
                         size = new Vector2(1, 1)
                     });
+                result[startArray[index].x, startArray[index].y] = true;
 
                 // 팝
                 while (nextSteps.Count > 0) // O(?)
@@ -154,6 +167,12 @@ namespace no23821try1
 
                             if (M_IsInside(movedRect)) continue;
                             if (M_IsContainX(movedRect)) continue;
+                            
+                            // 이지점 위까지는 오케이.
+                            if (M_IsNotNew(movedRect))
+                            {
+                                continue;
+                            }
 
                             // 이것을 주석처리했는데도 시간 초과가 발생했다. 그래프 탐색을 바꾸어야 하나?
                             for (int y = movedRect.leftUpPosition.y; y < movedRect.leftUpPosition.y + movedRect.size.y; y++)
