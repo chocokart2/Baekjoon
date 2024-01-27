@@ -31,7 +31,9 @@ namespace no20301try1
             {
                 circle[index] = new Seat();
                 circle[index].value = index + 1;
-
+            }
+            for (int index = 0; index < size; index++)
+            {
                 if (index > 0)
                 {
                     circle[index].prev = circle[index - 1];
@@ -49,10 +51,6 @@ namespace no20301try1
                 {
                     circle[index].next = circle[0];
                 }
-            }
-            for (int index = 0; index < size; index++)
-            {
-
             }
             current = circle[step - 1];
             

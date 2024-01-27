@@ -43,11 +43,7 @@ namespace no16973try1
             bool M_IsAvailable(Vector2 position)
             {
                 Vector2 m_front = new Vector2() { x = position.x, y = position.y };
-                Vector2 m_back = new Vector2()
-                {
-                    x = position.x + rectSize.x,
-                    y = position.y + rectSize.y
-                };
+                Vector2 m_back = position + rectSize;
 
                 if (m_front.x < 0 || m_front.x > xSize || m_front.y < 0 || m_front.y > ySize) return false;
                 if (m_back.x < 0 || m_back.x > xSize || m_back.y < 0 || m_back.y > ySize) return false;
@@ -55,7 +51,7 @@ namespace no16973try1
                 return (sums[m_back.x, m_back.y] - sums[m_back.x, m_front.y] - sums[m_front.x, m_back.y] + sums[m_front.x, m_front.y] == 0);
             }
 
-            Vector2[] queue = new Vector2[xSize * ySize * 2];
+            Vector2[] queue = new Vector2[xSize * ySize];
             int queueRear = 0;
             int queueHead = 0;
             bool[,] trace = new bool[xSize, ySize];

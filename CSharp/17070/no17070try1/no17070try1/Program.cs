@@ -14,31 +14,18 @@ namespace no17070try1
 
             Queue<(int x, int y)> positionQueue;
             HashSet<(int x, int y)> registeredElement;
-            // 디버그용 코드
-            //HashSet<(int x, int y)> positionHistory; // 중복을 막습니다.
 
             public SetQueue()
             {
                 positionQueue = new Queue<(int x, int y)>();
                 registeredElement = new HashSet<(int x, int y)>();
-                // 디버그용 코드
-                //positionHistory = new HashSet<(int x, int y)>();
             }
 
-            public bool Add((int x, int y) item, bool isEmpty)
+            public bool Add((int x, int y) item)
             {
-                //Console.WriteLine($"DEBUG : Add(({item.x}, {item.y})) 호출됨");
                 if (registeredElement.Contains(item)) return false;
-                //디버그용 코드
-                //if (positionHistory.Contains(item))
-                //{
-                //    Console.WriteLine($"DEBUG 좌표({item.x}, {item.y})는 이미 방문했던 좌표입니다.");
-                //}
                 positionQueue.Enqueue(item);
                 registeredElement.Add(item);
-                // 디버그용 코드
-                //positionHistory.Add(item);
-                //Console.WriteLine($"DEBUG : Add({item.x}, {item.y})");
                 return true;
             }
             public (int x, int y) Out()
@@ -71,7 +58,7 @@ namespace no17070try1
             }
 
             caseCountRightDirection[1, 0] = 1;
-            nextPosition.Add((1, 0), false);
+            nextPosition.Add((1, 0));
 
             while (nextPosition.Count > 0)
             {
@@ -87,9 +74,6 @@ namespace no17070try1
                             caseCountDownDirection[x, y];
                 ulong toDown = caseCountDiagonalDirection[x, y] +
                         caseCountDownDirection[x, y];
-                bool isEmpty = toDiagonal == 0;
-
-
 
                 if (x != sizeN - 1 || y != sizeN - 1)
                 {
@@ -104,7 +88,7 @@ namespace no17070try1
                     if (isWall[x + 1, y] == false)
                     {
                         caseCountRightDirection[x + 1, y] += toRight;
-                        nextPosition.Add((x + 1, y), isEmpty);
+                        nextPosition.Add((x + 1, y));
                     }
                 }
                 if (isInsideY && (toDown > 0))
@@ -112,7 +96,7 @@ namespace no17070try1
                     if (isWall[x, y + 1] == false)
                     {
                         caseCountDownDirection[x, y + 1] += toDown;
-                        nextPosition.Add((x, y + 1), isEmpty);
+                        nextPosition.Add((x, y + 1));
                     }
                 }
                 if (isInsideX && isInsideY && (toDiagonal > 0))
@@ -120,51 +104,11 @@ namespace no17070try1
                     if (!(isWall[x + 1, y] || isWall[x, y + 1] || isWall[x + 1, y + 1]))
                     {
                         caseCountDiagonalDirection[x + 1, y + 1] += toDiagonal;
-                        nextPosition.Add((x + 1, y + 1), isEmpty);
+                        nextPosition.Add((x + 1, y + 1));
                     }
                 }
 
             }
-
-            // 디버그용 코드!
-            //for (int y = 0; y < sizeN; ++y)
-            //{
-            //    for (int x = 0; x < sizeN; ++x)
-            //    {
-            //        Console.Write($"{caseCountRightDirection[x, y]}\t");
-            //    }
-            //    Console.WriteLine();
-            //}
-            //Console.WriteLine();
-            //for (int y = 0; y < sizeN; ++y)
-            //{
-            //    for (int x = 0; x < sizeN; ++x)
-            //    {
-            //        Console.Write($"{caseCountDiagonalDirection[x, y]}\t");
-            //    }
-            //    Console.WriteLine();
-            //}
-            //Console.WriteLine();
-            //for (int y = 0; y < sizeN; ++y)
-            //{
-            //    for (int x = 0; x < sizeN; ++x)
-            //    {
-            //        Console.Write($"{caseCountDownDirection[x, y]}\t");
-            //    }
-            //    Console.WriteLine();
-            //}
-            //Console.WriteLine();
-            //for (int y = 0; y < sizeN; ++y)
-            //{
-            //    for (int x = 0; x < sizeN; ++x)
-            //    {
-            //        int sum = caseCountRightDirection[x, y] +
-            //                caseCountDiagonalDirection[x, y] +
-            //                caseCountDownDirection[x, y];
-            //        Console.Write($"{sum}\t");
-            //    }
-            //    Console.WriteLine();
-            //}
 
             ulong result = caseCountRightDirection[sizeN - 1, sizeN - 1] +
                 caseCountDiagonalDirection[sizeN - 1, sizeN - 1] +
