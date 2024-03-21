@@ -1,0 +1,7 @@
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240316Arena24\noAtry1\noAtry1\bin\Debug\noAtry1.exe.config
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240316Arena24\noAtry1\noAtry1\bin\Debug\noAtry1.exe
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240316Arena24\noAtry1\noAtry1\bin\Debug\noAtry1.pdb
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240316Arena24\noAtry1\noAtry1\obj\Debug\noAtry1.csproj.AssemblyReference.cache
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240316Arena24\noAtry1\noAtry1\obj\Debug\noAtry1.csproj.CoreCompileInputs.cache
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240316Arena24\noAtry1\noAtry1\obj\Debug\noAtry1.exe
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240316Arena24\noAtry1\noAtry1\obj\Debug\noAtry1.pdb

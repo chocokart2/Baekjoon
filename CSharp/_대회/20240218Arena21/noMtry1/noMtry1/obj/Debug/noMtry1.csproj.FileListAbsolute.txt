@@ -1,0 +1,7 @@
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240218Arena21\noMtry1\noMtry1\bin\Debug\noMtry1.exe.config
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240218Arena21\noMtry1\noMtry1\bin\Debug\noMtry1.exe
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240218Arena21\noMtry1\noMtry1\bin\Debug\noMtry1.pdb
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240218Arena21\noMtry1\noMtry1\obj\Debug\noMtry1.csproj.AssemblyReference.cache
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240218Arena21\noMtry1\noMtry1\obj\Debug\noMtry1.csproj.CoreCompileInputs.cache
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240218Arena21\noMtry1\noMtry1\obj\Debug\noMtry1.exe
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\_대회\20240218Arena21\noMtry1\noMtry1\obj\Debug\noMtry1.pdb

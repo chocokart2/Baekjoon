@@ -1,0 +1,7 @@
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\1897\no1897try1\no1897try1\bin\Debug\no1897try1.exe.config
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\1897\no1897try1\no1897try1\bin\Debug\no1897try1.exe
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\1897\no1897try1\no1897try1\bin\Debug\no1897try1.pdb
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\1897\no1897try1\no1897try1\obj\Debug\no1897try1.csproj.AssemblyReference.cache
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\1897\no1897try1\no1897try1\obj\Debug\no1897try1.csproj.CoreCompileInputs.cache
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\1897\no1897try1\no1897try1\obj\Debug\no1897try1.exe
+C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\1897\no1897try1\no1897try1\obj\Debug\no1897try1.pdb
