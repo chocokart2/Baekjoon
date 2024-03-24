@@ -26,7 +26,7 @@ namespace testing
 
             static T[] GetLIS(List<T> _sourse, Func<T, T, bool> isRightFirst)
             {
-                
+                return new T[0];
             }
             static T[] GetLIS(T[] _sourse, Func<T, T, bool> isRightFirst)
                 => GetLIS(_sourse.ToList(), isRightFirst);
@@ -51,6 +51,25 @@ namespace testing
 
             }
         }
+        static long[] GetPrimeNumArray(long range)
+        {
+            List<long> resultList = new List<long>();
+
+            for (long i = 2; i < range; ++i)
+            {
+                bool isPrimeNum = true;
+                for (int index = 0; index < resultList.Count; ++index)
+                {
+                    if (i % resultList[index] == 0)
+                    {
+                        isPrimeNum = false;
+                        break;
+                    }
+                }
+                if (isPrimeNum) resultList.Add(i);
+            }
+            return resultList.ToArray();
+        }
 
         static void Main(string[] args)
         {
@@ -70,6 +89,12 @@ namespace testing
             // 값 확인 함수
             // 게으른 값 변경 함수
             // LIS 업데이트 함수
+
+            long[] primeNums = GetPrimeNumArray(40000);
+            Queue<long> q = new Queue<long>();
+            long x = 615284357373061;
+
+
 
         }
     }
