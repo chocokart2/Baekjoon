@@ -90,11 +90,11 @@ namespace testing
             // 게으른 값 변경 함수
             // LIS 업데이트 함수
 
-            long[] primeNums = GetPrimeNumArray(40000);
-            Queue<long> q = new Queue<long>();
-            long x = 615284357373061;
+            Dictionary<int, string> sayWords = new Dictionary<int, string>();
+            sayWords.Add(1, "뻡뀨!");
+            sayWords.Add(1, "앤 뻡뀨 투!");
 
-
+            Console.WriteLine(sayWords);
 
         }
     }
