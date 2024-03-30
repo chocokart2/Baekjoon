@@ -27,6 +27,8 @@ namespace no2252try1
             private int count;
             private Dictionary<int, int> key2index;
 
+
+            private const bool M_IS_DEBUGGING = false;
             const int NOT_FOUND = -1;
 
             /// <summary>
@@ -46,6 +48,10 @@ namespace no2252try1
             }
             public void Push(NodePtr item)
             {
+                if (M_IS_DEBUGGING)
+                {
+                    Console.WriteLine($"HEAP.Push() >> 입력됨 {item.num}");
+                }
                 ++count;
                 data[count] = item;
                 key2index.Add(item.num, count);
@@ -58,12 +64,28 @@ namespace no2252try1
             }
             public NodePtr Pop()
             {
+                if (M_IS_DEBUGGING)
+                {
+                    Console.WriteLine($"HEAP.Pop() 호출됨");
+                }
                 if (count < 1) return default;
+                key2index[data[count].num] = 1;
+
                 NodePtr result = data[1];
                 data[1] = data[count];
                 count--;
+                if (M_IS_DEBUGGING)
+                {
+                    Console.WriteLine($"HEAP.Pop() >> Key2Index의 값 제거 {result.num}");
+                }
                 key2index.Remove(result.num);
                 M_Heapify(1);
+                // 힙정렬 이후의 결과
+                if (M_IS_DEBUGGING)
+                {
+                    Console.WriteLine($"HEAP.Pop() : 정렬 결과 >> {ForceGetString(GetStr)}");
+                    if (Peek() != null) Console.WriteLine($"HEAP.Pop() : 첫째 >> {Peek().num}");
+                }
                 return result;
             }
             public void Refresh()
@@ -79,7 +101,22 @@ namespace no2252try1
             public int Count => count;
             public void Heapify(int key)
             {
+                if (M_IS_DEBUGGING)
+                {
+                    Console.WriteLine($"HEAP.Heapify() >> 키 값이 {key}인 원소 => {key2index[key]}번째 원소를 재배열합니다.");
+                }
                 M_Heapify(key2index[key]);
+            }
+            public string ForceGetString(Func<NodePtr, string> GetString)
+            {
+                StringBuilder answer = new StringBuilder();
+                if (count < 1) return "EMPTY";
+                for (int index = 1; index <= count; index++)
+                {
+                    answer.Append($"{GetString(data[index])} ");
+                }
+                answer.Remove(answer.Length - 1, 1);
+                return answer.ToString();
             }
 
             protected void M_Swap(int leftIndex, int rightIndex)
@@ -98,12 +135,18 @@ namespace no2252try1
 
             protected void M_Heapify(int targetIndex)
             {
+                if (M_IS_DEBUGGING)
+                {
+                    Console.WriteLine($"HEAP.M_Heapify({targetIndex})");
+                }
+                bool hasChanged = false;
                 for (int currentIndex = targetIndex, daughterIndex = M_FindDaughterIndex(targetIndex);
                     daughterIndex != NOT_FOUND;
                     currentIndex = daughterIndex, daughterIndex = M_FindDaughterIndex(daughterIndex))
                 {
                     if (M_IsLeftPriority(data[currentIndex], data[daughterIndex])) break; // 정상화가 된 상태입니다.
                     M_Swap(currentIndex, daughterIndex);
+                    hasChanged = true;
                 }
                 for (int currentIndex = targetIndex, motherIndex = M_FindMotherIndex(targetIndex);
                     motherIndex != NOT_FOUND;
@@ -111,6 +154,11 @@ namespace no2252try1
                 {
                     if (M_IsLeftPriority(data[motherIndex], data[currentIndex])) break; // 정상화가 된 상태입니다.
                     M_Swap(motherIndex, currentIndex);
+                    hasChanged = true;
+                }
+                if (M_IS_DEBUGGING)
+                {
+                    Console.WriteLine($"HEAP.M_Heapify() >> hasChanged = {(hasChanged ? "변경됨!" : "변경되지 않음!")}");
                 }
             }
             protected int M_FindMotherIndex(int targetIndex) => (targetIndex < 2) ? NOT_FOUND : targetIndex >> 1;
@@ -126,13 +174,13 @@ namespace no2252try1
             protected bool M_IsLeftPriority(NodePtr left, NodePtr right)
                 => IsLeftPrecedence(left, right) <= 0;
         }
-
+        static string GetStr(NodePtr item) => item.num.ToString();
 
 
         static void Main(string[] args)
         {
             StringBuilder result = new StringBuilder();
-
+            bool isDebugging = false;
             string[] nums = Console.ReadLine().Split(' ');
             NodePtr[] peoples = new NodePtr[int.Parse(nums[0])];
             for (int index = 0; index < peoples.Length; ++index)
@@ -165,10 +213,12 @@ namespace no2252try1
                 peoples[leftIndex].nextContainsNum.Add(rightIndex);
 
             }
-
-            foreach (NodePtr one in peoples)
+            if (isDebugging)
             {
-                Console.WriteLine($"{one.num}번째 사람 / 입장 경로 수 : {one.countOfEnterence}");
+                foreach (NodePtr one in peoples)
+                {
+                    Console.WriteLine($"{one.num}번째 사람 / 입장 경로 수 : {one.countOfEnterence}");
+                }
             }
 
 
@@ -195,7 +245,10 @@ namespace no2252try1
                 else
                 {
                     // 여기서 문제가 없다는것을 바로 알 수 있었음
-                    Console.WriteLine($">> 큐에 들어간 것 : {peoples[index].num} / 입장 경로 수 : {peoples[index].countOfEnterence}");
+                    if (isDebugging)
+                    {
+                        Console.WriteLine($">> 큐에 들어간 것 : {peoples[index].num} / 입장 경로 수 : {peoples[index].countOfEnterence}");
+                    }
                     queue.Enqueue(peoples[index]);
                     peoples[index].hasVisited = true;
                     visitedLeft--;
@@ -208,10 +261,17 @@ namespace no2252try1
             // lowAccessPeoples에서 문제가 발생!
             while (queue.Count > 0)
             {
+                if (isDebugging)
+                {
+                    Console.WriteLine("== 큐 루프 시작 ==");
+                }
                 //Console.WriteLine($">> {queue.Count}");
                 // 큐에서 원소를 꺼내 연결된 모든 간선을 제거
                 NodePtr one = queue.Dequeue(); // 같은 포인터가 다시 참조되선 안됩니다!
-                Console.WriteLine($"나온 것 : {one.num} / 입장 : {one.countOfEnterence}");
+                if (isDebugging)
+                {
+                    Console.WriteLine($"큐에서 나온 것 : {one.num} / 입장 : {one.countOfEnterence}");
+                }
 
                 // 어썰트문
                 if (one.countOfEnterence > 0)
@@ -231,6 +291,12 @@ namespace no2252try1
 
                 //Console.WriteLine($"++ {one.num}");
                 result.Append($"{one.num} ");
+                //
+                if (isDebugging)
+                {
+                    Console.WriteLine("간선 제거 시작");
+                }
+
                 for (int index = 0; index < one.next.Count; ++index)
                 {
                     //if (one.next[index].hasVisited) continue;
@@ -244,11 +310,19 @@ namespace no2252try1
                     }
                     lowAccessPeoples.Heapify(one.next[index].num);
                 }
-
+                if (isDebugging)
+                {
+                    Console.WriteLine($"간선 제거 종료 : 힙 값 : {lowAccessPeoples.ForceGetString(GetStr)}");
+                }
                 // 간선 제거 이후에 진입차수가 0이 된 정점을 큐에 "전부" 삽입
                 //Console.WriteLine($">>>> selecter.Count = {lowAccessPeoples.Count}");
+
                 while (lowAccessPeoples.Count > 0)
                 {
+                    if (isDebugging)
+                    {
+                        Console.WriteLine($"HEAP 내용 >> {lowAccessPeoples.ForceGetString(GetStr)}");
+                    }
                     if (lowAccessPeoples.Peek().countOfEnterence > 0) break;
                     //if (lowAccessPeoples.Peek().countOfEnterence < -1)
                     if (lowAccessPeoples.Peek().hasVisited)
@@ -270,9 +344,12 @@ namespace no2252try1
                     //Console.WriteLine($"하나 빠져나감. selecter.Count = {lowAccessPeoples.Count}");
                     //Console.WriteLine($"이때 현재의 NEXT nextOne.hasVisited = {nextOne.hasVisited}");
 
-                    // 힙에 같은 원소가 동시에 들어갔습니다!
-                    Console.WriteLine($">> 다음으로 등록되었습니다 : {nextOne.num}");
-                    
+                    // 힙에 같은 원소가 동시에 들어갔습니다!\
+                    if (isDebugging)
+                    {
+                        Console.WriteLine($">> 큐로 등록되었습니다 : {nextOne.num}");
+                    }
+
                     queue.Enqueue(nextOne);
                     nextOne.hasVisited = true;
                     // 정리 -> 자신에게 접근헐 수 있는 객체가 없어야지만 true로 변경된다고 가정
