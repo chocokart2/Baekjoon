@@ -71,6 +71,75 @@ namespace testing
             return resultList.ToArray();
         }
 
+
+
+        // 주체(Subject) 인터페이스
+        public interface ISubject
+        {
+            void Attach(IObserver observer);
+            void Detach(IObserver observer);
+            void Notify();
+        }
+
+        // 옵저버(Observer) 인터페이스
+        public interface IObserver
+        {
+            void Update();
+        }
+
+        // 구체적인 주체 클래스
+        public class ConcreteSubject : ISubject
+        {
+            private List<IObserver> observers = new List<IObserver>();
+            private int state;
+
+            public int State
+            {
+                get { return state; }
+                set
+                {
+                    state = value;
+                    Notify(); // 상태 변경 시 옵저버들에게 알림
+                }
+            }
+
+            public void Attach(IObserver observer)
+            {
+                observers.Add(observer);
+            }
+
+            public void Detach(IObserver observer)
+            {
+                observers.Remove(observer);
+            }
+
+            public void Notify()
+            {
+                foreach (var observer in observers)
+                {
+                    observer.Update();
+                }
+            }
+        }
+
+        // 구체적인 옵저버 클래스
+        public class ConcreteObserver : IObserver
+        {
+            private ConcreteSubject subject;
+            private string observerName;
+
+            public ConcreteObserver(ConcreteSubject subject, string name)
+            {
+                this.subject = subject;
+                observerName = name;
+            }
+
+            public void Update()
+            {
+                Console.WriteLine($"{observerName} has been notified: Subject's state is now {subject.State}");
+            }
+        }
+
         static void Main(string[] args)
         {
             // 어떤 LIS 클래스
@@ -90,11 +159,27 @@ namespace testing
             // 게으른 값 변경 함수
             // LIS 업데이트 함수
 
-            Dictionary<int, string> sayWords = new Dictionary<int, string>();
-            sayWords.Add(1, "뻡뀨!");
-            sayWords.Add(1, "앤 뻡뀨 투!");
+            // 주체 객체 생성
+            ConcreteSubject subject = new ConcreteSubject();
 
-            Console.WriteLine(sayWords);
+            // 옵저버 객체들 생성 및 주체에 등록
+            ConcreteObserver observer1 = new ConcreteObserver(subject, "Observer 1");
+            ConcreteObserver observer2 = new ConcreteObserver(subject, "Observer 2");
+
+            subject.Attach(observer1);
+            subject.Attach(observer2);
+
+            // 주체의 상태 변경 및 알림 발생
+            subject.State = 5;
+
+            // 옵저버들을 주체에서 제거
+            subject.Detach(observer1);
+
+            // 다시 상태 변경 및 알림 발생
+            subject.State = 10;
+            subject.State = 15;
+
+            Console.ReadLine();
 
         }
     }
