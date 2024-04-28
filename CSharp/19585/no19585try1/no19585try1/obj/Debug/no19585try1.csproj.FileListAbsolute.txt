@@ -1,0 +1,7 @@
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\19585\no19585try1\no19585try1\bin\Debug\no19585try1.exe.config
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\19585\no19585try1\no19585try1\bin\Debug\no19585try1.exe
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\19585\no19585try1\no19585try1\bin\Debug\no19585try1.pdb
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\19585\no19585try1\no19585try1\obj\Debug\no19585try1.csproj.AssemblyReference.cache
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\19585\no19585try1\no19585try1\obj\Debug\no19585try1.csproj.CoreCompileInputs.cache
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\19585\no19585try1\no19585try1\obj\Debug\no19585try1.exe
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\19585\no19585try1\no19585try1\obj\Debug\no19585try1.pdb

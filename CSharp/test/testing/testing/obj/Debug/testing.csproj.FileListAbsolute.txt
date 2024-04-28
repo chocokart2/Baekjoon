@@ -12,3 +12,10 @@ C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\test\testing\testing\ob
 C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\test\testing\testing\obj\Debug\testing.csproj.CoreCompileInputs.cache
 C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\test\testing\testing\obj\Debug\testing.exe
 C:\Users\PTY\OneDrive\문서\GitHub\test\Baekjoon\CSharp\test\testing\testing\obj\Debug\testing.pdb
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\test\testing\testing\bin\Debug\testing.exe.config
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\test\testing\testing\bin\Debug\testing.exe
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\test\testing\testing\bin\Debug\testing.pdb
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\test\testing\testing\obj\Debug\testing.csproj.AssemblyReference.cache
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\test\testing\testing\obj\Debug\testing.csproj.CoreCompileInputs.cache
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\test\testing\testing\obj\Debug\testing.exe
+C:\chocokart\MyGithub\test\Baekjoon\CSharp\test\testing\testing\obj\Debug\testing.pdb

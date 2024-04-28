@@ -71,72 +71,125 @@ namespace testing
             return resultList.ToArray();
         }
 
-
-
-        // 주체(Subject) 인터페이스
-        public interface ISubject
+        public class DisjointSetInt // 서로소 집합
         {
-            void Attach(IObserver observer);
-            void Detach(IObserver observer);
-            void Notify();
-        }
+            private int[] parent;
 
-        // 옵저버(Observer) 인터페이스
-        public interface IObserver
-        {
-            void Update();
-        }
-
-        // 구체적인 주체 클래스
-        public class ConcreteSubject : ISubject
-        {
-            private List<IObserver> observers = new List<IObserver>();
-            private int state;
-
-            public int State
+            public DisjointSetInt(int size)
             {
-                get { return state; }
-                set
+                parent = new int[size];
+                for (int index = 0; index < size; ++index)
                 {
-                    state = value;
-                    Notify(); // 상태 변경 시 옵저버들에게 알림
+                    parent[index] = index;
                 }
             }
-
-            public void Attach(IObserver observer)
+            public bool IsSame(int x, int y)
             {
-                observers.Add(observer);
+                return FindRootRecursive(x) == FindRootRecursive(y);
             }
-
-            public void Detach(IObserver observer)
+            public void Union(int x, int y)
             {
-                observers.Remove(observer);
+                parent[FindRootRecursive(y)] = FindRootRecursive(x);
             }
-
-            public void Notify()
+            public int FindRootRecursive(int target)
             {
-                foreach (var observer in observers)
-                {
-                    observer.Update();
-                }
+                if (parent[target] == target) return target; // 재귀의 종료
+                int root = FindRootRecursive(parent[target]);
+                parent[target] = root; // 경로 압축
+                return root;
             }
         }
-
-        // 구체적인 옵저버 클래스
-        public class ConcreteObserver : IObserver
+        static class LineSegmentIntersection
         {
-            private ConcreteSubject subject;
-            private string observerName;
-
-            public ConcreteObserver(ConcreteSubject subject, string name)
+            public class BadLineSyntaxException : Exception
             {
-                this.subject = subject;
-                observerName = name;
+                public BadLineSyntaxException() : base("선분을 표현하는 배열의 형식이 잘못되었습니다. 한 선분을 표현하는 배열의 올바른 형식 : {시작x, 시작y, 종료x, 종료y}") { }
+                public BadLineSyntaxException(string message) : base(message) { }
             }
 
-            public void Update()
+            private const int START_X = 0;
+            private const int START_Y = 1;
+            private const int END_X = 2;
+            private const int END_Y = 3;
+
+            public static bool IsTwoLineMeet1D(double[] LineA, double[] LineB)
             {
-                Console.WriteLine($"{observerName} has been notified: Subject's state is now {subject.State}");
+                if ((LineA.Length != 2) || (LineB.Length != 2))
+                    throw new BadLineSyntaxException(
+                        "선분을 표현하는 배열의 형식이 잘못되었습니다. 한 선분을 표현하는 배열의 올바른 형식 : {시작, 종료}"
+                        );
+
+                double LineAMin = Math.Min(LineA[0], LineA[1]);
+                double LineBMin = Math.Min(LineB[0], LineB[1]);
+                double LineAMax = Math.Max(LineA[0], LineA[1]);
+                double LineBMax = Math.Max(LineB[0], LineB[1]);
+
+                if (LineAMax < LineBMin) return false;
+                if (LineBMax < LineAMin) return false;
+                return true;
+            }
+            public static bool IsTwoLineMeet2D(double[] LineA, double[] LineB)
+            {
+                if ((LineA.Length != 4) || (LineB.Length != 4)) throw new BadLineSyntaxException();
+
+                // y값이 맞는 순간을 체크합니다.
+                bool[] isLineParraelToY = new bool[2];
+                if (LineA[START_X] == LineA[END_X]) isLineParraelToY[0] = true;
+                if (LineB[START_X] == LineB[END_X]) isLineParraelToY[1] = true;
+
+                if (isLineParraelToY[0] && isLineParraelToY[1])
+                {
+                    if (LineA[0] != LineB[0]) return false;
+                    return IsTwoLineMeet1D(
+                        new double[2] { LineA[START_Y], LineA[END_Y] },
+                        new double[2] { LineB[START_Y], LineB[END_Y] }
+                        );
+                }
+                else if (isLineParraelToY[0] || isLineParraelToY[1])
+                {
+                    if (IsTwoLineMeet1D(
+                        new double[2] { LineA[START_X], LineA[END_X] },
+                        new double[2] { LineB[START_X], LineB[END_X] }
+                        ) == false) return false;
+
+                    double[] lineNotParrelToY =
+                        (LineA[START_X] != LineA[END_X]) ? LineA : LineB;
+                    double[] lineParrelToY =
+                        (LineA[START_X] == LineA[END_X]) ? LineA : LineB;
+
+                    double pointX = lineParrelToY[START_X];
+                    double _y = GetY2DLine(pointX, lineNotParrelToY);
+                    return IsTwoLineMeet1D(
+                        new double[2] { lineParrelToY[START_Y], lineParrelToY[END_Y] },
+                        new double[2] { _y, _y });
+                }
+                else
+                {
+                    double LineAMinX = Math.Min(LineA[START_X], LineA[END_X]);
+                    double LineBMinX = Math.Min(LineB[START_X], LineB[END_X]);
+                    double LineAMaxX = Math.Max(LineA[START_X], LineA[END_X]);
+                    double LineBMaxX = Math.Max(LineB[START_X], LineB[END_X]);
+
+                    if (LineAMaxX < LineBMinX) return false;
+                    if (LineBMaxX < LineAMinX) return false;
+
+                    // 공통된 정의역을 구한다.
+                    double startX = Math.Max(LineAMinX, LineBMinX);
+                    double endX = Math.Min(LineAMaxX, LineBMaxX);
+
+                    double startY = GetY2DLine(startX, LineA) - GetY2DLine(startX, LineB);
+                    double endY = GetY2DLine(endX, LineA) - GetY2DLine(endX, LineB);
+
+                    if (startY * endY > 0.0f) return false;
+                    else return true;
+                }
+
+            }
+            public static double GetY2DLine(double inputX, double[] line)
+            {
+                return (inputX - line[START_X])
+                    * (line[END_Y] - line[START_Y])
+                    / (line[END_X] - line[START_X]) + line[START_Y];
             }
         }
 
@@ -159,27 +212,21 @@ namespace testing
             // 게으른 값 변경 함수
             // LIS 업데이트 함수
 
-            // 주체 객체 생성
-            ConcreteSubject subject = new ConcreteSubject();
+            double[] LineA = new double[]
+            {
+                0.0, 1.0,
+                0.0, 5.0
+            };
+            double[] LineB = new double[]
+            {
+                0.0, 7.0,
+                0.0, 5.0
+            };
 
-            // 옵저버 객체들 생성 및 주체에 등록
-            ConcreteObserver observer1 = new ConcreteObserver(subject, "Observer 1");
-            ConcreteObserver observer2 = new ConcreteObserver(subject, "Observer 2");
+            Console.WriteLine(
+                LineSegmentIntersection.IsTwoLineMeet2D(LineA, LineB)
+                );
 
-            subject.Attach(observer1);
-            subject.Attach(observer2);
-
-            // 주체의 상태 변경 및 알림 발생
-            subject.State = 5;
-
-            // 옵저버들을 주체에서 제거
-            subject.Detach(observer1);
-
-            // 다시 상태 변경 및 알림 발생
-            subject.State = 10;
-            subject.State = 15;
-
-            Console.ReadLine();
 
         }
     }
